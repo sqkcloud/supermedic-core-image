@@ -19,7 +19,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-      - name: Build weasis-core-img
+      - name: Build supermedic-core-img
         run: mvn -B clean install -f main
       - name: Extract Maven project version
         run: |
@@ -30,7 +30,7 @@ jobs:
       - name: Checkout mvn-repo repository
         uses: actions/checkout@v5
         with:
-          repository: nroduit/mvn-repo
+          repository: sqkcloud/mvn-repo
           path: mvn-repo
           token: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Install xmlstarlet
@@ -39,7 +39,7 @@ jobs:
         run: |
           cd mvn-repo
           REPO=$(pwd)
-          PKGFOLDER="org/weasis/core/weasis-core-img"
+          PKGFOLDER="org/supermedic/core/supermedic-core-img"
           TAG_VERSION=${{ env.LIB_VERSION }}
           F_META="maven-metadata.xml"
           
@@ -52,7 +52,7 @@ jobs:
               aritifactId=$(echo ${1} | awk -F'/' '{print $NF}')
               echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
               <metadata>
-              <groupId>org.weasis.core</groupId>
+              <groupId>org.supermedic.core</groupId>
               <artifactId>${aritifactId}</artifactId>
               <versioning>
               <release></release>
@@ -86,5 +86,5 @@ jobs:
           
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -m "Add weasis-core-img release"
+          git commit -m "Add supermedic-core-img release"
           git push

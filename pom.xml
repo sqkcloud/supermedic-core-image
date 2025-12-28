@@ -3,24 +3,24 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.weasis.core</groupId>
-  <artifactId>weasis-core-img-bom</artifactId>
+  <groupId>org.supermedic.core</groupId>
+  <artifactId>supermedic-core-img-bom</artifactId>
   <name>Image processing (OpenCV) - BOM</name>
   <version>${revision}${sha1}${changelist}</version>
   <packaging>pom</packaging>
 
   <properties>
-    <revision>${weasis.core.version}.7</revision>
+    <revision>${supermedic.core.version}.7</revision>
     <changelist></changelist> <!-- Remove "-SNAPSHOT" for release -->
     <sha1/>
 
-    <weasis.opencv.version>4.12.2</weasis.opencv.version>
-    <weasis.core.version>${weasis.opencv.version}</weasis.core.version>
-    <weasis.opencv.native.version>${weasis.opencv.version}-dcm</weasis.opencv.native.version>
+    <supermedic.opencv.version>4.12.2</supermedic.opencv.version>
+    <supermedic.core.version>${supermedic.opencv.version}</supermedic.core.version>
+    <supermedic.opencv.native.version>${supermedic.opencv.version}-dcm</supermedic.opencv.native.version>
   </properties>
 
   <modules>
-    <module>weasis-core-img</module>
+    <module>supermedic-core-img</module>
   </modules>
 
   <licenses>
@@ -46,8 +46,8 @@
       </snapshots>
     </repository>
     <repository>
-      <id>mvn-repo-master</id>
-      <url>https://raw.githubusercontent.com/nroduit/mvn-repo/master/</url>
+      <id>supermedic-repo-master</id>
+      <url>https://raw.githubusercontent.com/sqkcloud/supermedic-repo/master/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -59,37 +59,37 @@
 
       <!-- OpenCV native library -->
       <dependency>
-        <groupId>org.weasis.thirdparty.org.opencv</groupId>
+        <groupId>org.supermedic.thirdparty.org.opencv</groupId>
         <artifactId>libopencv_java</artifactId>
-        <version>${weasis.opencv.native.version}</version>
+        <version>${supermedic.opencv.native.version}</version>
         <type>so</type>
         <classifier>linux-aarch64</classifier>
       </dependency>
       <dependency>
-        <groupId>org.weasis.thirdparty.org.opencv</groupId>
+        <groupId>org.supermedic.thirdparty.org.opencv</groupId>
         <artifactId>libopencv_java</artifactId>
-        <version>${weasis.opencv.native.version}</version>
+        <version>${supermedic.opencv.native.version}</version>
         <type>so</type>
         <classifier>linux-x86-64</classifier>
       </dependency>
       <dependency>
-        <groupId>org.weasis.thirdparty.org.opencv</groupId>
+        <groupId>org.supermedic.thirdparty.org.opencv</groupId>
         <artifactId>libopencv_java</artifactId>
-        <version>${weasis.opencv.native.version}</version>
+        <version>${supermedic.opencv.native.version}</version>
         <type>dylib</type>
         <classifier>macosx-aarch64</classifier>
       </dependency>
       <dependency>
-        <groupId>org.weasis.thirdparty.org.opencv</groupId>
+        <groupId>org.supermedic.thirdparty.org.opencv</groupId>
         <artifactId>libopencv_java</artifactId>
-        <version>${weasis.opencv.native.version}</version>
+        <version>${supermedic.opencv.native.version}</version>
         <type>dylib</type>
         <classifier>macosx-x86-64</classifier>
       </dependency>
       <dependency>
-        <groupId>org.weasis.thirdparty.org.opencv</groupId>
+        <groupId>org.supermedic.thirdparty.org.opencv</groupId>
         <artifactId>opencv_java</artifactId>
-        <version>${weasis.opencv.native.version}</version>
+        <version>${supermedic.opencv.native.version}</version>
         <type>dll</type>
         <classifier>windows-x86-64</classifier>
       </dependency>
